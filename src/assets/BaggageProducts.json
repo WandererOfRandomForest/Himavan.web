@@ -1,0 +1,134 @@
+[
+    {
+        "Serial No.": 1,
+        "Product Name": "Round Plate 6 inch",
+        "Dimensions": "\u00d86\" x H 0.7\" Inch (\u00d8151 x H 18 mm)",
+        "Weight (gms)": 6,
+        "Ex-works Price (INR/unit)": 1.08,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 80,
+        "Master Carton Quantity": 2000,
+        "Price/Box (INR)": 2160
+    },
+    {
+        "Serial No.": 2,
+        "Product Name": "Round Plate 9 inch",
+        "Dimensions": "\u00d89\" x H 0.7\" Inch (\u00d8225 x H 18 mm)",
+        "Weight (gms)": 14,
+        "Ex-works Price (INR/unit)": 2.51,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 36,
+        "Master Carton Quantity": 900,
+        "Price/Box (INR)": 2260
+    },
+    {
+        "Serial No.": 3,
+        "Product Name": "Round Plate 10 inch",
+        "Dimensions": "\u00d810\" x H 0.9\" Inch (\u00d8256 x H23 mm)",
+        "Weight (gms)": 18,
+        "Ex-works Price (INR/unit)": 3.23,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 30,
+        "Master Carton Quantity": 750,
+        "Price/Box (INR)": 2425
+    },
+    {
+        "Serial No.": 4,
+        "Product Name": "Round Plate 10 inch 3 Compartments",
+        "Dimensions": "\u00d810\" x H 0.8\" Inch (\u00d8250 x H21 mm)",
+        "Weight (gms)": 18.5,
+        "Ex-works Price (INR/unit)": 3.32,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 30,
+        "Master Carton Quantity": 750,
+        "Price/Box (INR)": 2490
+    },
+    {
+        "Serial No.": 5,
+        "Product Name": "Round Plate 11 inch 4 Compartments",
+        "Dimensions": "\u00d811\" x H 1\" Inch (\u00d8280 x H 25.5 mm)",
+        "Weight (gms)": 21,
+        "Ex-works Price (INR/unit)": 3.34,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 30,
+        "Master Carton Quantity": 750,
+        "Price/Box (INR)": 2505
+    },
+    {
+        "Serial No.": 6,
+        "Product Name": "180ml Bowl",
+        "Dimensions": "\u00d84.5\" x H 1.5\" Inch (\u00d8115 x H 38 mm)",
+        "Weight (gms)": 5,
+        "Ex-works Price (INR/unit)": 1.01,
+        "Pcs/Pack": 50,
+        "Packs/Carton": 60,
+        "Master Carton Quantity": 3000,
+        "Price/Box (INR)": 3030
+    },
+    {
+        "Serial No.": 7,
+        "Product Name": "350ml Bowl",
+        "Dimensions": "\u00d86\" x H 1.6\" Inch (\u00d8151 x H 41 mm)",
+        "Weight (gms)": 8.5,
+        "Ex-works Price (INR/unit)": 1.71,
+        "Pcs/Pack": 50,
+        "Packs/Carton": 30,
+        "Master Carton Quantity": 1500,
+        "Price/Box (INR)": 2565
+    },
+    {
+        "Serial No.": 8,
+        "Product Name": "650ml Bowl",
+        "Dimensions": "\u00d87\" x H 2.5\" Inch (\u00d8177 x H 63 mm)",
+        "Weight (gms)": 12,
+        "Ex-works Price (INR/unit)": 3.76,
+        "Pcs/Pack": 50,
+        "Packs/Carton": 25,
+        "Master Carton Quantity": 1250,
+        "Price/Box (INR)": 4700
+    },
+    {
+        "Serial No.": 9,
+        "Product Name": "650ml Bowl Lid",
+        "Dimensions": "\u00d87\" x H 0.2\" Inch (\u00d8177 x H 5 mm)",
+        "Weight (gms)": 10,
+        "Ex-works Price (INR/unit)": 3.14,
+        "Pcs/Pack": 50,
+        "Packs/Carton": 25,
+        "Master Carton Quantity": 1250,
+        "Price/Box (INR)": 3925
+    },
+    {
+        "Serial No.": 10,
+        "Product Name": "5 Compartments Meal Tray",
+        "Dimensions": "11.6\" x 8.9\" x H 1.3\" Inch (295 x 225 x H 33 mm)",
+        "Weight (gms)": 34,
+        "Ex-works Price (INR/unit)": 6.09,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 20,
+        "Master Carton Quantity": 500,
+        "Price/Box (INR)": 3045
+    },
+    {
+        "Serial No.": 11,
+        "Product Name": "5 Compartments Meal Tray Lid",
+        "Dimensions": "11.6\" x 8.9\" x H 0.2\" Inch (295 x 225 x H 5 mm)",
+        "Weight (gms)": 27,
+        "Ex-works Price (INR/unit)": 4.84,
+        "Pcs/Pack": 25,
+        "Packs/Carton": 20,
+        "Master Carton Quantity": 500,
+        "Price/Box (INR)": 2420
+    },
+    {
+        "Serial No.": 12,
+        "Product Name": "Clamshell 6x6 inch",
+        "Dimensions": "6\" x 6\" x H 1.7\" Inch (153 x 153 x H 42 mm)",
+        "Weight (gms)": 20,
+        "Ex-works Price (INR/unit)": 3.81,
+        "Pcs/Pack": 50,
+        "Packs/Carton": 10,
+        "Master Carton Quantity": 500,
+        "Price/Box (INR)": 1905
+    }
+]
