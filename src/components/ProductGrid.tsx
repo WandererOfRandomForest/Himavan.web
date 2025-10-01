@@ -12,7 +12,8 @@ interface ProductJSON {
   "Serial No.": number;
   "Product Name": string;
   Category: string;
-  "Weight (gms)": string | number;
+  // This must be string | number to handle values like "4.0 +/- 0.5" in your data
+  "Weight (gms)": string | number; 
   "Volume (ml)"?: number | null;
   Length: number;
   Breadth: number;
@@ -55,18 +56,25 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
     }));
   };
 
+  // --- RECTIFICATION HERE ---
   const getProductsByCategory = (category: string): Product[] => {
+    // Use type assertion to tell TypeScript that the imported data 
+    // (which is a generic object from a .json file) is an array of ProductJSON.
+    const typedPaperData = (paperData as unknown) as ProductJSON[];
+    const typedBagasseData = (bagasseData as unknown) as ProductJSON[];
+
     switch (category) {
       case "Paper":
-        return mapJSONToProducts(paperData);
+        return mapJSONToProducts(typedPaperData);
       case "Bagasse":
-        return mapJSONToProducts(bagasseData);
+        return mapJSONToProducts(typedBagasseData);
       // case "Plastic Free":
-      //   return mapJSONToProducts(plasticFreeData);
+      //   return mapJSONToProducts(plasticFreeData);
       default:
         return [];
     }
   };
+  // --- END RECTIFICATION ---
 
   const products = getProductsByCategory(category);
 
