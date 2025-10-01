@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from "../assets/himavan_logo.png"
 
 const Navbar: React.FC = () => {
@@ -25,14 +25,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed w-full z-40 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-royal-blue shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             {/* <Leaf className={`h-8 w-8 mr-2 ${isScrolled ? 'text-blue-600' : 'text-white'}`} /> */}
             <img src={logo} alt="logo" className='h-12 w-12 mr-2' />
-            <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+            <span className={`text-xl font-bold ${isScrolled ? 'text-powder-blue' : 'text-white'}`}>
               HIMAVAN
             </span>
           </div>
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={`hover:scale-105 transition-all px-3 py-2 rounded-md text-sm font-medium ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                  isScrolled ? 'text-powder-blue hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}
               >
                 Home
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
               <button 
                 onClick={() => scrollToSection('about')}
                 className={`hover:scale-105 transition-all px-3 py-2 rounded-md text-sm font-medium ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                  isScrolled ? 'text-powder-blue hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}
               >
                 About
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
               <button 
                 onClick={() => scrollToSection('products')}
                 className={`hover:scale-105 transition-all px-3 py-2 rounded-md text-sm font-medium ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                  isScrolled ? 'text-powder-blue hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}
               >
                 Products
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
               <button 
                 onClick={() => scrollToSection('contact')}
                 className={`hover:scale-105 transition-all px-3 py-2 rounded-md text-sm font-medium ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                  isScrolled ? 'text-powder-blue hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}
               >
                 Contact
