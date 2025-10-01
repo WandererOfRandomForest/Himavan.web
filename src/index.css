@@ -17,16 +17,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #D0E6FD;
+  background: #D0E6FD; /* powder-blue */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #162660;
+  /* Changed from #162660 (old) to 'royal-blue' */
+  background: #162660; /* royal-blue */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e3a8a;
+  /* Changed from #1e3a8a to a slightly lighter royal-blue for hover effect */
+  background: #2a3c7a; /* A slightly lighter royal-blue for hover */
 }
 
 /* Typography animation keyframes */
@@ -58,7 +60,8 @@ body {
 
 .typewriter {
   overflow: hidden;
-  border-right: 3px solid #162660;
+  /* Changed from #162660 (old) to 'royal-blue' */
+  border-right: 3px solid #162660; /* royal-blue */
   white-space: nowrap;
   animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
 }
@@ -72,9 +75,9 @@ body {
   background: linear-gradient(
     90deg,
     #ffffff,
-    #dbeafe,
-    #3b82f6,
-    #dbeafe,
+    #F1E4D1, /* Replaced light blue (#dbeafe) with 'bone' */
+    #162660, /* Replaced bright blue (#3b82f6) with 'royal-blue' */
+    #F1E4D1, /* Replaced light blue (#dbeafe) with 'bone' */
     #ffffff
   );
   background-size: 300%;

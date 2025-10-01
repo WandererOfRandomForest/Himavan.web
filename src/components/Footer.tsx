@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
   ];
 
   const socialIcons = [
-    { icon: <Facebook className="h-5 w-5" />, href: '#' },
+    { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/share/17RxGR8oLi/' },
     { icon: <Twitter className="h-5 w-5" />, href: '#' },
-    { icon: <Instagram className="h-5 w-5" />, href: '#' },
+    { icon: <Instagram className="h-5 w-5" />, href: 'https://www.instagram.com/himavanpackagingsolutions?igsh=bW1sbnJlM3F4Y2wz' },
     { icon: <Linkedin className="h-5 w-5" />, href: '#' }
   ];
 

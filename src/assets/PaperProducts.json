@@ -1,0 +1,80 @@
+[
+  {
+    "Serial No.": 1,
+    "Product Name": "4 Inch Bowls",
+    "Category": "Bowls",
+    "Length": 101.0,
+    "Breadth": 101.0,
+    "Height": 26.0,
+    "Weight (gms)": "4.0 +/- 0.5",
+    "Volume (ml)": 150,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 1.07
+  },
+  {
+    "Serial No.": 2,
+    "Product Name": "120ml Bowls",
+    "Category": "Bowls",
+    "Length": 88.0,
+    "Breadth": 88.0,
+    "Height": 33.0,
+    "Weight (gms)": "3.5 +/- 0.5",
+    "Volume (ml)": 120,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 1.1
+  },
+  {
+    "Serial No.": 3,
+    "Product Name": "180ml Bowls",
+    "Category": "Bowls",
+    "Length": 105.0,
+    "Breadth": 105.0,
+    "Height": 35.0,
+    "Weight (gms)": "4.0 +/- 0.5",
+    "Volume (ml)": 180,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 1.27
+  },
+  {
+    "Serial No.": 4,
+    "Product Name": "250ml Bowls",
+    "Category": "Bowls",
+    "Length": 130.0,
+    "Breadth": 105.0,
+    "Height": 35.0,
+    "Weight (gms)": "6.0 +/- 0.5",
+    "Volume (ml)": 250,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 1.76
+  },
+  {
+    "Serial No.": 5,
+    "Product Name": "360ml Bowls",
+    "Category": "Bowls",
+    "Length": 135.9,
+    "Breadth": 135.9,
+    "Height": 35.6,
+    "Weight (gms)": "9.0 +/- 1.0",
+    "Volume (ml)": 360,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 2.52
+  },
+  {
+    "Serial No.": 6,
+    "Product Name": "6 Inch Plates",
+    "Category": "Plates",
+    "Length": 152.5,
+    "Breadth": 152.5,
+    "Height": 20.0,
+    "Weight (gms)": "6.5 +/- 0.5",
+    "Volume (ml)": null,
+    "Inner Pack": 125,
+    "Pack Size": 2000,
+    "Price/Pc (INR)": 1.6
+  }
+]
