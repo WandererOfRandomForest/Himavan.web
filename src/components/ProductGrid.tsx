@@ -12,8 +12,7 @@ interface ProductJSON {
   "Serial No.": number;
   "Product Name": string;
   Category: string;
-  // This must be string | number to handle values like "4.0 +/- 0.5" in your data
-  "Weight (gms)": string | number; 
+  "Weight (gms)": string | number;
   "Volume (ml)"?: number | null;
   Length: number;
   Breadth: number;
@@ -26,7 +25,6 @@ interface ProductJSON {
 interface Product {
   id: number;
   name: string;
-  price: string;
   image: string;
   rating: number;
   description: string;
@@ -40,26 +38,21 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
   const navigate = useNavigate();
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
-  // Map JSON to Product[]
+  // Map JSON to Product[] (Price calculation removed)
   const mapJSONToProducts = (data: ProductJSON[]): Product[] => {
     return data.map((item) => ({
       id: item["Serial No."],
       name: item["Product Name"],
-      price: `₹${item["Price/Pc (INR)"]}`,
       image: "/placeholder.png", // replace with actual images
       rating: 4.5,
-      description: `Category: ${item.Category}, Dimensions: ${item.Length}x${
-        item.Breadth
-      }x${item.Height} mm, Weight: ${item["Weight (gms)"]}${
-        item["Volume (ml)"] ? `, Volume: ${item["Volume (ml)"]} ml` : ""
+      description: `Dimensions: ${item.Length}x${item.Breadth}x${item.Height} mm | Weight: ${item["Weight (gms)"]}${
+        item["Volume (ml)"] ? ` | Volume: ${item["Volume (ml)"]} ml` : ""
       }`,
     }));
   };
 
-  // --- RECTIFICATION HERE ---
   const getProductsByCategory = (category: string): Product[] => {
-    // Use type assertion to tell TypeScript that the imported data 
-    // (which is a generic object from a .json file) is an array of ProductJSON.
+    // Type assertion to resolve TypeScript errors on imported JSON arrays
     const typedPaperData = (paperData as unknown) as ProductJSON[];
     const typedBagasseData = (bagasseData as unknown) as ProductJSON[];
 
@@ -74,13 +67,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
         return [];
     }
   };
-  // --- END RECTIFICATION ---
 
   const products = getProductsByCategory(category);
 
   // Animate cards on load
   useEffect(() => {
-    const cards = cardsRef.current;
+    const cards = cardsRef.current.filter(Boolean); // Filter out potential nulls
     gsap.fromTo(
       cards,
       { opacity: 0, y: 60, scale: 0.9 },
@@ -93,7 +85,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
         ease: "power3.out",
       }
     );
-  }, []);
+  }, [category, products.length]);
 
   const renderStars = (rating: number) => {
     const stars = [];
@@ -126,72 +118,82 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => navigate("/")}
-            className="flex items-center text-blue-200 hover:text-white mb-6 transition-colors duration-300"
+            className="flex items-center text-blue-200 hover:text-white mb-6 transition-colors duration-300 font-medium"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
             Back to Home
           </button>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {category} Products
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            {category} Eco-Friendly Solutions 🌎
           </h1>
-          <p className="text-xl text-blue-200 max-w-2xl">
-            Discover our premium collection of sustainable{" "}
-            {category.toLowerCase()} cutlery solutions
+          {/* Rectified Bolding */}
+          <p className="text-xl text-blue-200 max-w-3xl">
+            Explore our sustainable collection of biodegradable and compostable{" "}
+            <strong>{category.toLowerCase()}</strong> products.
           </p>
+          {/* End Rectified Bolding */}
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product, index) => (
             <div
               key={product.id}
-              ref={(el) => el && (cardsRef.current[index] = el)}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group hover:scale-105"
+              ref={(el) => {
+                if (el) cardsRef.current[index] = el;
+              }}
+              className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group hover:scale-[1.02] border border-gray-100"
             >
-              <div className="aspect-w-16 aspect-h-12 overflow-hidden">
+              <div className="aspect-w-16 aspect-h-12 overflow-hidden bg-gray-100">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 object-contain p-4 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
                   {product.name}
                 </h3>
 
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {product.description}
-                </p>
-
-                <div className="flex items-center mb-4">
-                  <div className="flex mr-2">{renderStars(product.rating)}</div>
-                  <span className="text-sm text-gray-500">
-                    ({product.rating})
-                  </span>
+                <div className="text-sm font-medium text-gray-700 bg-blue-50 p-3 rounded-lg mb-4">
+                  <p className="mb-1 text-blue-800">
+                    <span className="font-semibold">Features:</span>
+                  </p>
+                  <p className="text-xs">{product.description}</p>
+                </div>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="flex mr-2">{renderStars(product.rating)}</div>
+                    <span className="text-sm text-gray-500">
+                      ({product.rating} Rating)
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-blue-600">
-                    {product.price}
-                  </span>
-                  <button
-                    onClick={() =>
-                      (window.location.href =
-                        "https://wa.me/919008392267?text=I%20would%20like%20to%20book%20an%20order")
-                    }
-                    className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 hover:scale-105 flex items-center shadow-lg"
-                  >
-                    <FaWhatsapp className="h-4 w-4 mr-2" />
-                    Book Order
-                  </button>
-                </div>
+                <button
+                  onClick={() =>
+                    (window.location.href = `https://wa.me/919008392267?text=Hello%2C%20I%20am%20interested%20in%20a%20quote%20for%20the%20${product.name}%20product%20(ID%3A%20${product.id}).`)
+                  }
+                  className="w-full bg-green-600 text-white px-6 py-3 mt-2 rounded-xl hover:bg-green-700 transition-all duration-300 hover:scale-[1.03] flex items-center justify-center font-semibold shadow-md shadow-green-200"
+                >
+                  <FaWhatsapp className="h-5 w-5 mr-3" />
+                  Get Quote on WhatsApp
+                </button>
               </div>
             </div>
           ))}
         </div>
+        
+        {products.length === 0 && (
+          <div className="text-center py-20 bg-white rounded-xl shadow-lg mt-8">
+            <h2 className="text-2xl font-bold text-gray-700">No Products Found</h2>
+            <p className="text-gray-500 mt-2">Check the category spelling or try another section.</p>
+          </div>
+        )}
       </div>
     </div>
   );
